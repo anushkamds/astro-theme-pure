@@ -46,7 +46,7 @@ const {
         }</span
       >
     </div>
-    <div class='flex gap-x-2 sm:flex-col'>
+    <!-- <div class='flex gap-x-2 sm:flex-col'>
       <span class='text-foreground'>Copyright</span>
       <a
         class='text-sm text-muted-foreground max-sm:place-self-center'
@@ -56,37 +56,37 @@ const {
         CC BY-NC-SA 4.0
       </a>
     </div>
-  </div>
+  </div> -->
 
-  <!-- functions -->
-  <div class='relative'>
-    <div class='flex flex-row gap-3'>
-      {
-        [
-          { id: 'copy-link', icon: 'mingcute-link-2-line' },
-          { id: 'get-qrcode', icon: 'mingcute-qrcode-2-line' },
-          { id: 'share-weibo', icon: 'mingcute-weibo-line' }
-        ].map(({ id, icon }) => (
-          <button
-            id={id}
-            class='group rounded-full bg-primary-foreground p-1 text-muted-foreground transition-colors hover:text-primary sm:p-1.5'
-          >
-            <svg class='size-5'>
-              <use href={`/icons/copyright-sponsor.svg#${icon}`} />
-            </svg>
-          </button>
-        ))
-      }
-    </div>
-    <div
-      id='qrcode'
-      aria-expanded='false'
-      class='absolute z-10 -mt-2 box-content max-h-0 overflow-hidden rounded-xl border bg-primary-foreground p-4 opacity-0 transition-all duration-300 ease-in-out *:my-0 aria-expanded:max-h-[256px] aria-expanded:translate-y-4 aria-expanded:opacity-100'
-    >
+    <!-- functions -->
+    <div class='relative'>
+      <div class='flex flex-row gap-3'>
+        {
+          [
+            { id: 'copy-link', icon: 'mingcute-link-2-line' },
+            { id: 'get-qrcode', icon: 'mingcute-qrcode-2-line' },
+            { id: 'share-weibo', icon: 'mingcute-weibo-line' }
+          ].map(({ id, icon }) => (
+            <button
+              id={id}
+              class='group rounded-full bg-primary-foreground p-1 text-muted-foreground transition-colors hover:text-primary sm:p-1.5'
+            >
+              <svg class='size-5'>
+                <use href={`/icons/copyright-sponsor.svg#${icon}`} />
+              </svg>
+            </button>
+          ))
+        }
+      </div>
+      <div
+        id='qrcode'
+        aria-expanded='false'
+        class='absolute z-10 -mt-2 box-content max-h-0 overflow-hidden rounded-xl border bg-primary-foreground p-4 opacity-0 transition-all duration-300 ease-in-out *:my-0 aria-expanded:max-h-[256px] aria-expanded:translate-y-4 aria-expanded:opacity-100'
+      >
+      </div>
     </div>
   </div>
-</div>
-
+  <!--
 <div class='mx-6 rounded-b-xl border border-t-0 px-3 pb-1.5 pt-1 sm:mx-8 sm:px-4'>
   <a
     href='/projects#sponsorship'
@@ -98,40 +98,41 @@ const {
       <use href='/icons/copyright-sponsor.svg#mingcute-receive-money-line'></use>
     </svg>
   </a>
-</div>
+</div> -->
 
-<script is:inline type='module'>
-  import QRCode from '/scripts/qrcode.js'
-  const link = window.location.href
+  <script is:inline type='module'>
+    import QRCode from '/scripts/qrcode.js'
+    const link = window.location.href
 
-  // copy link
-  const copyLink = document.getElementById('copy-link')
-  copyLink?.addEventListener('click', () => {
-    navigator.clipboard.writeText(link)
-  })
+    // copy link
+    const copyLink = document.getElementById('copy-link')
+    copyLink?.addEventListener('click', () => {
+      navigator.clipboard.writeText(link)
+    })
 
-  // get qrcode
-  function loadqrcode(qrcodeContainer) {
-    if (!qrcodeContainer) throw new Error('qrcode container not found')
-    if (qrcodeContainer.innerHTML !== '') return
-    new QRCode(qrcodeContainer, link)
-  }
-  const getQRCode = document.getElementById('get-qrcode')
-  const qrcodeContainer = document.getElementById('qrcode')
-  if (!qrcodeContainer) throw new Error('qrcode container not found')
-  getQRCode?.addEventListener('click', () => {
-    if (qrcodeContainer.ariaExpanded === 'true') {
-      qrcodeContainer.ariaExpanded = 'false'
-    } else {
-      loadqrcode(qrcodeContainer)
-      qrcodeContainer.ariaExpanded = 'true'
+    // get qrcode
+    function loadqrcode(qrcodeContainer) {
+      if (!qrcodeContainer) throw new Error('qrcode container not found')
+      if (qrcodeContainer.innerHTML !== '') return
+      new QRCode(qrcodeContainer, link)
     }
-  })
+    const getQRCode = document.getElementById('get-qrcode')
+    const qrcodeContainer = document.getElementById('qrcode')
+    if (!qrcodeContainer) throw new Error('qrcode container not found')
+    getQRCode?.addEventListener('click', () => {
+      if (qrcodeContainer.ariaExpanded === 'true') {
+        qrcodeContainer.ariaExpanded = 'false'
+      } else {
+        loadqrcode(qrcodeContainer)
+        qrcodeContainer.ariaExpanded = 'true'
+      }
+    })
 
-  // share weibo
-  const shareWeibo = document.getElementById('share-weibo')
-  shareWeibo?.addEventListener('click', () => {
-    const shareUrl = `http://service.weibo.com/share/share.php?url=${link}&title=${document.title}&pic=https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=400`
-    window.open(shareUrl, '_blank')
-  })
-</script>
+    // share weibo
+    const shareWeibo = document.getElementById('share-weibo')
+    shareWeibo?.addEventListener('click', () => {
+      const shareUrl = `http://service.weibo.com/share/share.php?url=${link}&title=${document.title}&pic=https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=400`
+      window.open(shareUrl, '_blank')
+    })
+  </script>
+</div>

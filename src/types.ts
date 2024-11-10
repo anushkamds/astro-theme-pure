@@ -47,7 +47,9 @@ export const SocialMediaIconId: Record<string, string> = {
   zhihu: 'ri-zhihu-line',
   steam: 'ri-steam-line',
   netease_music: 'ri-netease-cloud-music-line',
-  mail: 'mingcute-mail-line'
+  mail: 'mingcute-mail-line',
+  linkedin: 'linkedin',
+  resume: 'resume',
 }
 
 export type SocialLink = {
@@ -61,6 +63,8 @@ export type SocialLink = {
     | 'steam'
     | 'netease_music'
     | 'mail'
+    | 'linkedin'
+    | 'resume'
   url: string
 }
 

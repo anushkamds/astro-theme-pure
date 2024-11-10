@@ -6,7 +6,7 @@ import TOC from '@/components/pages/TOC.astro'
 import BlogHero from '@/components/blog/Hero.astro'
 import Copyright from '@/components/blog/Copyright.astro'
 import ArticleBottom from '@/components/blog/ArticleBottom.astro'
-import Comment from '@/components/Comment.astro'
+// import Comment from '@/components/Comment.astro'
 import Button from '@/components/Button.astro'
 import BackToTop from '@/components/pages/BackToTop.astro'
 
@@ -62,7 +62,7 @@ const primaryColor = post.data.coverImage?.color ?? 'hsl(var(--primary) / var(--
       <!-- article recommend -->
       <ArticleBottom content={post} class='mt-3 sm:mt-6' />
       <!-- comment -->
-      {!post.data.draft && <Comment class='mt-3 sm:mt-6' />}
+      <!-- {!post.data.draft && <Comment class='mt-3 sm:mt-6' />} -->
     </div>
     <BackToTop header='blog-hero' content='content' />
   </div>

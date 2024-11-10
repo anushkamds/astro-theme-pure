@@ -3,7 +3,7 @@ import type { MarkdownHeading } from 'astro'
 
 import PageLayout from '@/layouts/BaseLayout.astro'
 import TOC from '@/components/pages/TOC.astro'
-import PageInfo from '@/components/pages/PageInfo.astro'
+// import PageInfo from '@/components/pages/PageInfo.astro'
 import Button from '@/components/Button.astro'
 import BackToTop from '@/components/pages/BackToTop.astro'
 
@@ -36,7 +36,7 @@ const { title, headings, info, ...props } = Astro.props
           <h1 class='text-2xl font-medium sm:mb-2 sm:text-3xl'>
             {title}
           </h1>
-          {
+          <!-- {
             info && (
               <PageInfo
                 path={typeof info === 'string' ? info : info.slug}
@@ -46,7 +46,7 @@ const { title, headings, info, ...props } = Astro.props
                 class='italic'
               />
             )
-          }
+          } -->
         </div>
         <div
           id='content'
@@ -56,11 +56,11 @@ const { title, headings, info, ...props } = Astro.props
         </div>
       </article>
     </div>
-    <div
+    <!-- <div
       class='prose prose-base prose-zinc mt-8 text-muted-foreground dark:prose-invert prose-headings:font-medium prose-headings:text-foreground prose-headings:before:absolute prose-headings:before:-ms-4 prose-th:before:content-none'
     >
       <slot name='bottom' />
-    </div>
+    </div> -->
     <BackToTop header='hero' content='content' />
   </div>
 </PageLayout>
