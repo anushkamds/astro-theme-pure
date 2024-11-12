@@ -23,7 +23,7 @@ export const siteConfig: SiteConfig = {
     }
   },
   // Customize
-  pageSize: 8,
+  pageSize: 5,
   registration: {
     url: 'https://icp.gov.moe/?keyword=APTX4869',
     text: '萌ICP备APTX4869号'
@@ -41,20 +41,20 @@ export const siteConfig: SiteConfig = {
 export const socialLinks: SocialLinks = [
   {
     name: 'mail',
-    url: 'mailto:test@example.com'
+    url: 'mailto:anushka@nookie.dev'
   },
   {
     name: 'github',
-    url: 'https://github.com/cworld1/astro-theme-pure'
+    url: 'https://github.com/anushkamds'
   },
   {
     name: 'linkedin',
-    url: 'https://github.com/cworld1/astro-theme-pure'
+    url: 'Chttps://www.linkedin.com/in/anushkamahesh'
   },
   {
     name: 'resume',
-    url: 'https://github.com/cworld1/astro-theme-pure'
-  },
+    url: '/cv/Anushka_Mahesh-Fullstack_Engineer-Aug_2024.pdf'
+  }
 ]
 
 export const menuLinks: MenuLinks = [

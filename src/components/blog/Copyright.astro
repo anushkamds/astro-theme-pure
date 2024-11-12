@@ -64,8 +64,7 @@ const {
         {
           [
             { id: 'copy-link', icon: 'mingcute-link-2-line' },
-            { id: 'get-qrcode', icon: 'mingcute-qrcode-2-line' },
-            { id: 'share-weibo', icon: 'mingcute-weibo-line' }
+            { id: 'get-qrcode', icon: 'mingcute-qrcode-2-line' }
           ].map(({ id, icon }) => (
             <button
               id={id}
@@ -126,13 +125,6 @@ const {
         loadqrcode(qrcodeContainer)
         qrcodeContainer.ariaExpanded = 'true'
       }
-    })
-
-    // share weibo
-    const shareWeibo = document.getElementById('share-weibo')
-    shareWeibo?.addEventListener('click', () => {
-      const shareUrl = `http://service.weibo.com/share/share.php?url=${link}&title=${document.title}&pic=https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=400`
-      window.open(shareUrl, '_blank')
     })
   </script>
 </div>

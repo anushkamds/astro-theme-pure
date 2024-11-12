@@ -27,12 +27,6 @@ export default defineConfig({
   // base: '/docs',
   trailingSlash: 'never',
   output: 'server',
-  // if you want deploy on vercel
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true
-    }
-  }),
   // ---
   // if you want deploy locally
   // adapter: node({
