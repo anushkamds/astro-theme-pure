@@ -49,7 +49,7 @@ export const SocialMediaIconId: Record<string, string> = {
   netease_music: 'ri-netease-cloud-music-line',
   mail: 'mingcute-mail-line',
   linkedin: 'linkedin',
-  resume: 'resume',
+  resume: 'resume'
 }
 
 export type SocialLink = {

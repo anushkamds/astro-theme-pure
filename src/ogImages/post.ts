@@ -12,8 +12,8 @@ export default () => (title: string, description: string, author: string, publis
           month: 'long'
         })}
       </p>
-      <h1 tw="text-6xl font-bold leading-snug text-white">${title}</h1>
-      <p tw="text-xl font-semibold">${description}</p>
+      <h1 tw="text-6xl font-bold leading-snug text-white capitalize">${title}</h1>
+      <p tw="text-xl font-semibold capitalize">${description}</p>
     </div>
     <div tw="flex items-center justify-between w-full p-10 border-t border-[#2bbc89] text-xl">
       <div tw="flex items-center">

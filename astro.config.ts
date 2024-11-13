@@ -1,7 +1,5 @@
 import { defineConfig } from 'astro/config'
 // Adapter
-// if you want deploy on vercel
-import vercel from '@astrojs/vercel/serverless'
 // ---
 // if you want deploy locally
 // import node from '@astrojs/node'
@@ -18,15 +16,24 @@ import { remarkAlert } from 'remark-github-blockquote-alert'
 import remarkMath from 'remark-math'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import { siteConfig } from './src/site.config.ts'
-import { remarkGithubCards, remarkReadingTime, remarkArxivCards } from './src/utils/remarkParser.ts'
+import { remarkReadingTime } from './src/utils/remarkParser.ts'
+
+import cloudflare from '@astrojs/cloudflare'
 
 // https://astro.build/config
 export default defineConfig({
   // Top-Level Options
   site: siteConfig.site,
+  vite: {
+    ssr: { external: ['@resvg/resvg-js'] },
+    optimizeDeps: { exclude: ['@resvg/resvg-js'] },
+    build: { rollupOptions: { external: ['@resvg/resvg-js'] } }
+  },
   // base: '/docs',
   trailingSlash: 'never',
+
   output: 'server',
+
   // ---
   // if you want deploy locally
   // adapter: node({
@@ -43,24 +50,20 @@ export default defineConfig({
       SVG: false
     })
   ],
+
   // root: './my-project-directory',
 
   // Prefetch Options
   prefetch: true,
+
   // Server Options
   server: {
     host: true
   },
+
   // Markdown Options
   markdown: {
-    remarkPlugins: [
-      remarkUnwrapImages,
-      remarkMath,
-      remarkReadingTime,
-      remarkAlert,
-      remarkGithubCards,
-      remarkArxivCards
-    ],
+    remarkPlugins: [remarkUnwrapImages, remarkMath, remarkReadingTime, remarkAlert],
     rehypePlugins: [
       [rehypeKatex, {}],
       [
@@ -82,5 +85,6 @@ export default defineConfig({
         light: 'github-light'
       }
     }
-  }
+  },
+  adapter: cloudflare()
 })

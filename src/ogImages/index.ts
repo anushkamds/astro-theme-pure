@@ -1,7 +1,5 @@
-import extractColorScheme from './extractColorScheme'
 import post from './post'
 import satori, { type SatoriOptions } from 'satori'
-import { siteConfig } from '@/site-config'
 
 const fetchFont = async (weight: string) =>
   (
@@ -35,8 +33,6 @@ const satoriOptions: SatoriOptions = {
     }
   ]
 }
-
-const { accent, bg } = extractColorScheme('dark')['dark']
 
 const postTemplate = post()
 

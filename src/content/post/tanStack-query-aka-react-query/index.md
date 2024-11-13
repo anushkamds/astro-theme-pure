@@ -17,7 +17,7 @@ This is where TanStack Query, also known as React Query, comes in. It allows you
 ```tsx
 const query = useQuery({
   queryKey: ['test'],
-  queryFn: fetch('<https://api.example.com/data>'),
+  queryFn: fetch('<https://api.example.com/data>')
 })
 ```
 
@@ -40,7 +40,7 @@ const CreateTodo = () => {
   const mutation = useMutation({
     mutationFn: (formData) => {
       return fetch('/api', formData)
-    },
+    }
   })
   const onSubmit = (event) => {
     event.preventDefault()
