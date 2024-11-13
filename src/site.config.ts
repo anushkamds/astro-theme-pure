@@ -49,7 +49,7 @@ export const socialLinks: SocialLinks = [
   },
   {
     name: 'linkedin',
-    url: 'Chttps://www.linkedin.com/in/anushkamahesh'
+    url: 'https://www.linkedin.com/in/anushkamahesh'
   },
   {
     name: 'resume',

@@ -8,73 +8,39 @@ interface item {
   api?: string
   count?: number
 }
+
 const stats: item[] = [
   {
+    platform: 'Mail',
+    icon: 'social.svg#mingcute-mail-line',
+    link: 'mailto:anushka@nookie.dev',
+    text: 'followers',
+    color: '#f3efe8',
+    api: 'github/cworld1'
+  }, {
     platform: 'GitHub',
     icon: 'social.svg#mingcute-github-line',
-    link: 'https://github.com/cworld1',
+    link: 'https://github.com/anushkamds',
     text: 'followers',
     api: 'github/cworld1'
   },
   {
-    platform: 'Telegram',
-    icon: 'social.svg#mingcute-telegram-line',
+    platform: 'Linkedin',
+    icon: 'social.svg#linkedin',
     color: '#2ca5e0',
-    link: 'https://t.me/cworld0_cn',
+    link: 'https://www.linkedin.com/in/anushkamahesh',
     text: 'subscribers',
     api: 'telegram/cworld0_cn'
   },
   {
-    platform: 'Coolapk',
-    icon: 'social.svg#coolapk-line',
+    platform: 'Resume',
+    icon: 'social.svg#resume',
     color: '#11ab60',
-    link: 'https://www.coolapk.com/u/1384771',
+    link: '/cv/Anushka_Mahesh-Fullstack_Engineer-Aug_2024.pdf',
     text: 'fans',
     // api: 'coolapk/1384771',
     count: 6393
   },
-  {
-    platform: 'Bilibili',
-    icon: 'social.svg#ri-bilibili-line',
-    color: '#fe7398',
-    link: 'https://space.bilibili.com/388346465',
-    text: 'fans',
-    // api: 'bilibili/388346465',
-    count: 55
-  },
-  {
-    platform: 'Twitter',
-    icon: 'social.svg#mingcute-twitter-line',
-    color: '#1da1f2',
-    link: 'https://twitter.com/CWorld0',
-    text: 'followers',
-    // api: 'twitter/cworld0',
-    count: 34
-  },
-  {
-    platform: 'Weibo',
-    icon: 'copyright-sponsor.svg#mingcute-weibo-line',
-    color: '#e71f19',
-    link: 'https://weibo.com/cworld0',
-    text: 'followers',
-    api: 'weibo/5501674056'
-  },
-  {
-    platform: 'Zhihu',
-    icon: 'social.svg#ri-zhihu-line',
-    color: '#0084ff',
-    link: 'https://www.zhihu.com/people/wolf-03/answers',
-    text: 'followers',
-    api: 'zhihu/wolf-03'
-  },
-  {
-    platform: 'Steam',
-    icon: 'social.svg#ri-steam-line',
-    color: '#50769d',
-    link: 'https://steamcommunity.com/id/cworld',
-    text: 'games',
-    api: 'steamgames/76561199021278120'
-  }
 ]
 
 // async function fetchCount(item: item) {
@@ -126,12 +92,4 @@ const stats: item[] = [
       </a>
     ))
   }
-</div>
-<div class='mt-2 text-right text-sm'>
-  Display real-time; powered by <a
-    class='text-muted-foreground'
-    href='http://github.com/spencerwooo/substats'
-    target='_blank'
-    rel='noopener noreferrer'>Substats</a
-  >
 </div>
